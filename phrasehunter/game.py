@@ -22,6 +22,7 @@ class Game(object):
             guess = input("Guess a letter: ")
             if guess in phrase._guessed:
                 print("You already guessed {}. Try another letter.".format(guess))
+                phrase.display()
                 continue
             if phrase.check_guess(guess):
                 print("Correct guess!")
@@ -33,6 +34,7 @@ class Game(object):
                 print("Incorrect guess.")
                 self._lives -= 1
                 print("You have {} out of 5 lives remaining!".format(self._lives))
+                phrase.display()
                 if self._lives <= 0:
                     self._gameover = True
                     print("You have no more lives. Game over.")
