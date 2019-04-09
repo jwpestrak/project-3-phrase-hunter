@@ -9,9 +9,9 @@ class Phrase(object):
         display_string = ""
         for letter in self._phrase:
             if letter in self._guessed:
-                display_string += letter
+                display_string += letter + " "
             else:
-                display_string += "_"
+                display_string += "_ "
         print(display_string)
 
     def check_guess(self, letter):
